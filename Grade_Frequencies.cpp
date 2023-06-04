@@ -69,13 +69,14 @@ int main(){
     }
     if (grade == 'X'){
         main_function_loop_end_flag = true;
+        cout << "Goodbye" << endl;
         break;
     }
     
     //output the score and the grade 
     //determine which counter is updated 
     //get the next score 
-
+    printGrade(score, getGrade(score));
     printFrequencies(aCount, bCount, cCount, dCount, fCount);
     } 
   
