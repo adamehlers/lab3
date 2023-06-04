@@ -39,20 +39,27 @@ void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount
     cout << setw(3) << right << "F" << "      " << setw(3) << left << fCount << endl;
 }
 
+
+
 int main(){
     double score;
     bool main_function_loop_end_flag = false;
     int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
 
-    //get the first score 
- while(main_function_loop_end_flag == false) { 
-  char grade = getGrade(score); 
-  //output the score and the grade 
-  //determine which counter is updated 
-  //get the next score 
- } 
+        //get the first score 
+    while(main_function_loop_end_flag == false) { 
+    char grade = getGrade(score);
+
+    if (grade == 'X'){
+        main_function_loop_end_flag = true;
+    }
+    
+    //output the score and the grade 
+    //determine which counter is updated 
+    //get the next score 
+    } 
   
- //output the frequencies
+    printFrequencies(aCount, bCount, cCount, dCount, fCount);
 
     return 0;
 }
