@@ -32,11 +32,11 @@ void printGrade(double score, char grade){
 void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
     cout << "Grade  Frequency" << endl;
     cout << "----------------" << endl;
-    cout << setw(3) << right << "A" << "      " << setw(3) << left << aCount << endl;
-    cout << setw(3) << right << "B" << "      " << setw(3) << left << bCount << endl;
-    cout << setw(3) << right << "C" << "      " << setw(3) << left << cCount << endl;
-    cout << setw(3) << right << "D" << "      " << setw(3) << left << dCount << endl;
-    cout << setw(3) << right << "F" << "      " << setw(3) << left << fCount << endl;
+    cout << setw(5) << right << "A" << "      " << setw(3) << left << aCount << endl;
+    cout << setw(5) << right << "B" << "      " << setw(3) << left << bCount << endl;
+    cout << setw(5) << right << "C" << "      " << setw(3) << left << cCount << endl;
+    cout << setw(5) << right << "D" << "      " << setw(3) << left << dCount << endl;
+    cout << setw(5) << right << "F" << "      " << setw(3) << left << fCount << endl;
 }
 
 
@@ -47,47 +47,41 @@ int main(){
     int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
  
     while(main_function_loop_end_flag == false) {
-    cout << "Enter the score: ";
-    cin >> score;
-    if (cin.fail()){
-        cin.clear();
-        string incorrect_input;
-        cin >> incorrect_input;
-        cout << "Error: Not a valid input. Please try again." << endl;
-        return main();
-    }
+        cout << "Enter the score: ";
+        cin >> score;
+        if (cin.fail()){
+            cin.clear();
+            string incorrect_input;
+            cin >> incorrect_input;
+            cout << "Error: Not a valid input. Please try again." << endl;
+            return main();
+        }
 
 
-    char grade = getGrade(score);
-    if (grade == 'A'){
-        aCount++;
-    }
-    if (grade == 'B'){
-        bCount++;
-    }
-    if (grade == 'C'){
-        cCount++;
-    }
-    if (grade == 'D'){
-        dCount++;
-    }
-    if (grade == 'F'){
-        fCount++;
-    }
-    if (grade == 'X'){
-        main_function_loop_end_flag = true;
-        cout << "Goodbye" << endl;
-        break;
-    }
-    
-    //output the score and the grade 
-    //determine which counter is updated 
-    //get the next score 
-    printGrade(score, getGrade(score));
-    printFrequencies(aCount, bCount, cCount, dCount, fCount);
+        char grade = getGrade(score);
+        if (grade == 'A'){
+            aCount++;
+        }
+        if (grade == 'B'){
+            bCount++;
+        }
+        if (grade == 'C'){
+            cCount++;
+        }
+        if (grade == 'D'){
+            dCount++;
+        }
+        if (grade == 'F'){
+            fCount++;
+        }
+        if (grade == 'X'){
+            main_function_loop_end_flag = true;
+            break;
+        }
+        
+
+        printGrade(score, getGrade(score));
     } 
-  
-    
-
+    printFrequencies(aCount, bCount, cCount, dCount, fCount);
     return 0;
 }
