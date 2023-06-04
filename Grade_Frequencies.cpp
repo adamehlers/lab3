@@ -65,6 +65,7 @@ void printGrade(double score, char grade){
  *  @return - A formatted printed table of the different letter grades and the number of each grade that has been counted
 */
 void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
+    cout << endl;
     cout << "Grade  Frequency" << endl;
     cout << "----------------" << endl;
     cout << setw(5) << right << "A" << "      " << setw(3) << left << aCount << endl;
@@ -78,22 +79,23 @@ void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount
 
 int main(){
     double score;
-    bool main_function_loop_end_flag = false;
-    int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
+    bool main_function_loop_end_flag = false;   ///Flag to keep a while loop running until it becomes true
+    int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;     ///Used to count the amount of each letter grade
  
-    while(main_function_loop_end_flag == false) {
+    while(main_function_loop_end_flag == false) {   
         cout << "Enter the score: ";
+        char grade = ' ';
         cin >> score;
-        if (cin.fail()){
+        if (cin.fail()){    ///If a grade (in terms of percentage) is not entered, the incorrect input will be discarded and the loop will continue
             cin.clear();
             string incorrect_input;
             cin >> incorrect_input;
             cout << "Error: Not a valid input. Please try again." << endl;
-            return main();
+            continue;   ///Skip to the next iteration of the loop (slightly different than the Python 3 continue statement)
         }
 
 
-        char grade = getGrade(score);
+        grade = getGrade(score);    ///Prompt the user for the percentage grade (and incriment the correct counter)
         if (grade == 'A'){
             aCount++;
         }
@@ -114,9 +116,8 @@ int main(){
             break;
         }
         
-
-        printGrade(score, getGrade(score));
+        printGrade(score, getGrade(score));     ///Print a nicely formatted output for the percentage and letter grade
     } 
-    printFrequencies(aCount, bCount, cCount, dCount, fCount);
+    printFrequencies(aCount, bCount, cCount, dCount, fCount);   ///Once a negative number has been inputted, print the total number of each letter grade to the terminal
     return 0;
 }
