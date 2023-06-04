@@ -1,9 +1,24 @@
+/**
+ *    @file: Grade_Frequencies.cpp
+ *  @author: Adam Ehlers
+ *    @date: 06/04/2023
+ *   @brief: This code will keep taking in values for graded assignments (in terms of percentage) and list the percentage, corresponding letter grade, and finally the total number of each letter grade when a negative percentage is inputted
+ *  
+ */
+
 #include <iostream>
 #include <iomanip>
 #include <string>
 
 using namespace std;
 
+/**
+ *  Function:   getgrade    
+ *              returns a letter grade depending on the double value inputted
+ * 
+ *  @param score - The grade (in terms of percentage) of an assignment
+ *  @return - The corresponding letter grade
+*/
 char getGrade(double score){
     if (score >= 90){
         return 'A';
@@ -25,10 +40,30 @@ char getGrade(double score){
     }
 }
 
+
+/**
+ *  Function:   printGrade
+ *              displays the percentage grade and letter grade that was just inputted
+ *  
+ *  @param score - The grade in terms of percentage
+ *  @param grade - The letter grade of the assignment
+ *  @return - A formatted terminal output that displays both grades
+*/
 void printGrade(double score, char grade){
     cout << endl << "Score: " << setw(5) << fixed << setprecision(1) << score << ", " << "Grade: " << setw(1) << grade << endl;
 }
 
+/**
+ *  Function:   printFrequencies
+ *              displays the total of each letter grade that has been counted
+ * 
+ *  @param aCount - The total number of 'A' letter grades
+ *  @param bCount - The total number of 'B' letter grades
+ *  @param cCount - The total number of 'C' letter grades
+ *  @param dCount - The total number of 'D' letter grades
+ *  @param fCount - The total number of 'F' letter grades
+ *  @return - A formatted printed table of the different letter grades and the number of each grade that has been counted
+*/
 void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
     cout << "Grade  Frequency" << endl;
     cout << "----------------" << endl;
