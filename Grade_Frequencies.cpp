@@ -40,7 +40,18 @@ void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount
 }
 
 int main(){
-    
+    double score; 
+    int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
+
+    //get the first score 
+ while(Enter a condition here) { 
+  char grade = getGrade(score); 
+  //output the score and the grade 
+  //determine which counter is updated 
+  //get the next score 
+ } 
+  
+ //output the frequencies
 
     return 0;
 }
