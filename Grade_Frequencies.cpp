@@ -30,5 +30,11 @@ void printGrade(double score, char grade){
 }
 
 void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
-    
+    cout << "Grade  Frequency" << endl;
+    cout << "----------------" << endl;
+    cout << setw(3) << right << "A" << "      " << setw(3) << left << aCount << endl;
+    cout << setw(3) << right << "B" << "      " << setw(3) << left << bCount << endl;
+    cout << setw(3) << right << "C" << "      " << setw(3) << left << cCount << endl;
+    cout << setw(3) << right << "D" << "      " << setw(3) << left << dCount << endl;
+    cout << setw(3) << right << "F" << "      " << setw(3) << left << fCount << endl;
 }
