@@ -38,3 +38,9 @@ void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount
     cout << setw(3) << right << "D" << "      " << setw(3) << left << dCount << endl;
     cout << setw(3) << right << "F" << "      " << setw(3) << left << fCount << endl;
 }
+
+int main(){
+    
+
+    return 0;
+}
