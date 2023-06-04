@@ -50,7 +50,16 @@ int main(){
     while(main_function_loop_end_flag == false) {
     cout << "Enter the score: ";
     cin >> score;
+    if (cin.fail()){
+        cin.clear();
+        string incorrect_input;
+        cin >> incorrect_input;
+        cout << "Error: Not a valid input. Please try again." << endl;
+        return main();
+    }
+
     char grade = getGrade(score);
+
 
     if (grade == 'A'){
         aCount++;
