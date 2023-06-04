@@ -26,7 +26,7 @@ char getGrade(double score){
 }
 
 void printGrade(double score, char grade){
-    cout << "Score: " << setw(5) << score << ", " << "Grade: " << setw(1) << grade << endl;
+    cout << endl << "Score: " << setw(5) << fixed << setprecision(1) << score << ", " << "Grade: " << setw(1) << grade << endl;
 }
 
 void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
@@ -45,8 +45,7 @@ int main(){
     double score;
     bool main_function_loop_end_flag = false;
     int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
-
-        //get the first score 
+ 
     while(main_function_loop_end_flag == false) {
     cout << "Enter the score: ";
     cin >> score;
@@ -58,9 +57,8 @@ int main(){
         return main();
     }
 
+
     char grade = getGrade(score);
-
-
     if (grade == 'A'){
         aCount++;
     }
