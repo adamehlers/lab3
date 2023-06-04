@@ -24,3 +24,7 @@ char getGrade(double score){
         return 'X';
     }
 }
+
+void printGrade(double score, char grade){
+    cout << "Score: " << setw(5) << score << ", " << "Grade: " << setw(1) << grade << endl;
+}
