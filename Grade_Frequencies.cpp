@@ -28,3 +28,7 @@ char getGrade(double score){
 void printGrade(double score, char grade){
     cout << "Score: " << setw(5) << score << ", " << "Grade: " << setw(1) << grade << endl;
 }
+
+void printFrequencies(int aCount, int bCount, int cCount, int dCount, int fCount){
+    
+}
