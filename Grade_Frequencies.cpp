@@ -47,19 +47,39 @@ int main(){
     int aCount = 0, bCount = 0, cCount = 0, dCount = 0, fCount = 0;
 
         //get the first score 
-    while(main_function_loop_end_flag == false) { 
+    while(main_function_loop_end_flag == false) {
+    cout << "Enter the score: ";
+    cin >> score;
     char grade = getGrade(score);
 
+    if (grade == 'A'){
+        aCount++;
+    }
+    if (grade == 'B'){
+        bCount++;
+    }
+    if (grade == 'C'){
+        cCount++;
+    }
+    if (grade == 'D'){
+        dCount++;
+    }
+    if (grade == 'F'){
+        fCount++;
+    }
     if (grade == 'X'){
         main_function_loop_end_flag = true;
+        break;
     }
     
     //output the score and the grade 
     //determine which counter is updated 
     //get the next score 
+
+    printFrequencies(aCount, bCount, cCount, dCount, fCount);
     } 
   
-    printFrequencies(aCount, bCount, cCount, dCount, fCount);
+    
 
     return 0;
 }
